@@ -2,10 +2,10 @@ type AppPropsType = {
 
 }
 type AppType = {
-    name: 'app1',
-    entry: '//localhost:8080',
-    container: '#container',
-    activeRule: '/react',
+    name: string,
+    entry: string,
+    container: string | Element,
+    activeRule: string,
     props: AppPropsType
 }
 
