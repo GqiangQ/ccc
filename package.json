@@ -3,5 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "qqiang-g <740407980@qq.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite"
+  },
+  "dependencies": {
+    "@vitejs/plugin-vue": "^2.2.2",
+    "vite": "^2.8.4",
+    "vue": "^3.2.31"
+  }
 }
