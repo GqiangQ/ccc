@@ -5,11 +5,14 @@
   "author": "qqiang-g <740407980@qq.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "vite"
+    "dev": "vite",
+    "app1": "sh ./app1.sh",
+    "app2": "sh ./app2.sh"
   },
   "dependencies": {
     "@vitejs/plugin-vue": "^2.2.2",
     "vite": "^2.8.4",
-    "vue": "^3.2.31"
+    "vue": "^3.2.31",
+    "vue-router": "^4.0.12"
   }
 }
