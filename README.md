@@ -21,11 +21,35 @@
 #### 1.1 实现路由加载的配置
 ～～～
 子应用的切换和渲染是通过路由path匹配实现的，首先要定义好子应用的配置信息，通过监听路由挂在组件就可以了
-、、、
-import qiankun from 'qiankun';
+```
+import { registerMicroApps, start } from 'qiankun';
 import register from './register';
-qiankun.init(register) 
-qiankun.start()
-、、、
+qiankun.registerMicroApps(register) 
+start()
+```
 
 现在手写的方式和qiankun官网的实现方式有一些不同，只是方法命名不同，我是按照个人喜好设计的，没有个设计者都有自己喜欢的设计思路和喜欢的风格。
+
+##### 1.1.1 registerMicroApps
+registerMicroApp函数就是保存配置的路由和子应用的匹配关系
+
+##### 1.1.2 start
+start 开启路由监听
+##### 1.1.3 实现路由监听
+路由分为hash和history,两种，
+
+hash：
+```js
+window.addEventListener('hashchange', function() {
+  // todo
+}, false);
+```
+history:
+---
+history路由比较特殊像使用`popstate`,监听`history.go`,`history.back`,`history.forward`这些动作
+但是 `history.push`,`history.replace`时间不能监听到
+```js
+const todo = ()=>{}
+window.addEventListener('popstate', todo, false);
+
+```
