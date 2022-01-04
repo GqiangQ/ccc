@@ -4,6 +4,8 @@
     <div class="bar">
       <router-link to="/app1">app1</router-link>
       <router-link to="/app2">app2</router-link>
+      <div @click="$router.replace('/app1')">replace</div>
+      <div @click="$router.push('/app1')">push</div>
     </div>
     <main>
       主应用的路由容器
@@ -17,6 +19,15 @@
     </main>
   </div>
 </template>
+<script>
+export default {
+  methods: {
+    topage (){
+      this.$router.push('/app1')
+    }
+  }
+}
+</script>
 <style scoped>
 .body{
   height: 100vh;

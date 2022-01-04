@@ -1,11 +1,11 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import Page1 from './pages/page1.vue';
 import Page2 from './pages/page2.vue';
 
 
-import { registerMicroApps, start } from '../src/qiankun';
+import { registerMicroApps, start } from '../src/qiankun/index';
 
 registerMicroApps([
   {
@@ -25,7 +25,7 @@ registerMicroApps([
 start();
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes:[
     {
       path: '/app1',
