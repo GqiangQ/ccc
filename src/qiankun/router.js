@@ -1,14 +1,15 @@
 import { getApps } from './index'
 
-const routerChange = ()=>{
+const routerChange = async ()=>{
   const apps = getApps()
-  const app = apps.find(app=>window.location.pathname.startsWith(app.activeRule))
-  console.log(app);
-  
+  const app = apps.find(item=>window.location.pathname.startsWith(item.activeRule))
+  console.log(window.location.pathname, app.entry);
+  const html = await fetch(app.entry).then(res=>res.text());
+  console.log(html);
 }
 
 export default ()=>{
-const _pushState = window.history.pushState
+// const _pushState = window.history.pushState
 const _pushReplace = window.history.replaceState
 
 window.addEventListener('popstate', routerChange)
@@ -17,15 +18,16 @@ window.addEventListener('popstate', routerChange)
 //   console.log('change pushState');
 // });
 
-window.history.pushState = (...props)=>{
-  // _pushState.apply(window.history, props)
-  // console.log('pushState');
-  // routerChange(props)
-};
+// window.history.pushState = (...props)=>{
+//   // _pushState.apply(window.history, props)
+//   // console.log('pushState');
+//   // routerChange(props)
+// };
 
 window.history.replaceState = (...props)=>{
   _pushReplace.apply(window.history, props)
-  console.log('replaceState');
-  routerChange(props)
+  // console.log('replaceState');
+  setTimeout(routerChange,0)
+  // routerChange(props)
 };
 }

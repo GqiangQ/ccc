@@ -4,8 +4,8 @@
     <div class="bar">
       <router-link to="/app1">app1</router-link>
       <router-link to="/app2">app2</router-link>
-      <div @click="$router.replace('/app1')">replace</div>
-      <div @click="$router.push('/app1')">push</div>
+      <!-- <div @click="$router.replace('/app1')">replace</div>
+      <div @click="$router.push('/app1')">push</div> -->
     </div>
     <main>
       主应用的路由容器
