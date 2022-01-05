@@ -53,3 +53,4 @@ const todo = ()=>{}
 window.addEventListener('popstate', todo, false);
 
 ```
+##### 1.1.4 匹配到对应的路由加载不同应用的资源

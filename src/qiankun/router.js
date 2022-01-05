@@ -4,6 +4,7 @@ const routerChange = ()=>{
   const apps = getApps()
   const app = apps.find(app=>window.location.pathname.startsWith(app.activeRule))
   console.log(app);
+  
 }
 
 export default ()=>{
