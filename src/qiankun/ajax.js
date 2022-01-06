@@ -1,0 +1,1 @@
+export const Ajax = async (url) =>fetch(url).then(res=>res.text());

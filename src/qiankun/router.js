@@ -1,13 +1,14 @@
+import importHTML from './importHTML';
 import { getApps } from './index'
 
 const routerChange = async ()=>{
   const apps = getApps()
   const app = apps.find(item=>window.location.pathname.startsWith(item.activeRule))
   console.log(window.location.pathname, app.entry);
-  const html = await fetch(app.entry).then(res=>res.text());
-  console.log(html);
+  const { template, execScripts }  = await importHTML(app.entry)
   const container = document.querySelector(app.container)
-  container.innerHTML = html
+  container.appendChild(template)
+  execScripts()
 }
 
 export default ()=>{
