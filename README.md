@@ -54,3 +54,6 @@ window.addEventListener('popstate', todo, false);
 
 ```
 ##### 1.1.4 匹配到对应的路由加载不同应用的资源
+
+##### 1.1.5 将请求回来的html资源挂在在DOM节点上
+但是浏览器有限制问题，通过innerHTML挂在的资源中，script中的src地址不会加载，需要手动加载并执行

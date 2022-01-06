@@ -6,6 +6,8 @@ const routerChange = async ()=>{
   console.log(window.location.pathname, app.entry);
   const html = await fetch(app.entry).then(res=>res.text());
   console.log(html);
+  const container = document.querySelector(app.container)
+  container.innerHTML = html
 }
 
 export default ()=>{
