@@ -53,7 +53,17 @@ const todo = ()=>{}
 window.addEventListener('popstate', todo, false);
 
 ```
-##### 1.1.4 匹配到对应的路由加载不同应用的资源
+#### 1.2 挂载应用
+##### 1.2.1 匹配到对应的路由加载不同应用的资源
 
-##### 1.1.5 将请求回来的html资源挂在在DOM节点上
+##### 1.2.2 将请求回来的html资源挂在在DOM节点上
 但是浏览器有限制问题，通过innerHTML挂在的资源中，script中的src地址不会加载，需要手动加载并执行
+
+#### 1.2.3 css样式隔离
+通过 shadow
+
+```
+const DOM = document.createElement('DOM');
+const shadowRoot = DOM.attachShadow({mode: 'open'});
+shadowRoot.innerHTML = '<h1>innerHTML</h1>'; 
+```
